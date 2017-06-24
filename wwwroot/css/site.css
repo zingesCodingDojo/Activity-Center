@@ -1,0 +1,50 @@
+*{
+    margin: 0px auto;
+}
+    /*Main CSS File. #master, #header, #mainBody, #footer are shared among all CSHTML files.*/
+    #master{
+        text-align: center;
+        margin: 2rem 0px;
+        background-color: grey;
+        color: aliceblue;
+    }
+        #mainBody, #header{
+            text-align: left;
+        }
+        #header{
+            margin-top: -2rem;
+        }
+            #mainBody fieldset{
+                width: 40%;
+                display: inline-block;
+                margin-left: 0.25rem;
+            }
+            legend{
+                text-align: left;
+            }
+            #mainBody ul{
+                display: inline-block;
+                vertical-align: top;
+            }
+            #mainBody label, input{
+                display: block;
+                margin: 0.4em 0px;
+                padding: 0.5em 0px;
+            }
+            #mainBody input{
+                margin: 1em 0px;
+            }
+
+        #footer{
+            margin-top: 1rem;
+            text-align: left;
+            color: red;
+            width: 30%;
+            vertical-align: top;
+            background: linear-gradient(skyblue, aliceblue);
+            border-radius: 1rem;
+        }
+        #footer p{
+            margin-left: 1rem;
+        }
+        /*We added a comment!*/

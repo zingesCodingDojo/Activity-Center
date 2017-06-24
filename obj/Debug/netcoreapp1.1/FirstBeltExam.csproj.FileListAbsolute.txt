@@ -1,0 +1,8 @@
+/Users/tinaxia/Desktop/DojoAssignments/netCore/ORM/FirstBeltExam/bin/Debug/netcoreapp1.1/FirstBeltExam.deps.json
+/Users/tinaxia/Desktop/DojoAssignments/netCore/ORM/FirstBeltExam/bin/Debug/netcoreapp1.1/FirstBeltExam.runtimeconfig.json
+/Users/tinaxia/Desktop/DojoAssignments/netCore/ORM/FirstBeltExam/bin/Debug/netcoreapp1.1/FirstBeltExam.runtimeconfig.dev.json
+/Users/tinaxia/Desktop/DojoAssignments/netCore/ORM/FirstBeltExam/bin/Debug/netcoreapp1.1/FirstBeltExam.dll
+/Users/tinaxia/Desktop/DojoAssignments/netCore/ORM/FirstBeltExam/bin/Debug/netcoreapp1.1/FirstBeltExam.pdb
+/Users/tinaxia/Desktop/DojoAssignments/netCore/ORM/FirstBeltExam/obj/Debug/netcoreapp1.1/FirstBeltExam.AssemblyInfo.cs
+/Users/tinaxia/Desktop/DojoAssignments/netCore/ORM/FirstBeltExam/obj/Debug/netcoreapp1.1/FirstBeltExam.dll
+/Users/tinaxia/Desktop/DojoAssignments/netCore/ORM/FirstBeltExam/obj/Debug/netcoreapp1.1/FirstBeltExam.pdb

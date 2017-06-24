@@ -1,0 +1,42 @@
+@{
+    ViewData["Title"] = "CarlBelt Activity Adder Page";
+}
+<div id="master">
+    <div id="header">
+        <h1>Dojo Activity Center</h1>
+        <h3><a href="/SreturnOurActivities">Home</a></h3>
+        <p><a href="/Tlogout">Log off</a></p>
+    </div>
+    <div id="mainBody">
+        @{
+            foreach(var item in @ViewBag.ActivityDeetz){
+                @if(item.UserId == @ViewBag.MyID){
+                    <form action="/removeActivity/@item.ActivityId" method="Post">
+                        <button type="submit" name="removeActivity">Delete Activity</button>
+                    </form>
+                }
+                else{
+                    <form action="/toggler/@item.ActivityId" method="post">
+                        <select name="Join" onchange="this.form.submit()">
+                            <option value="Join">Join</option>
+                            <option selected>Click to Join or Leave!</option>
+                            <option value="Leave">Leave</option>
+                        </select>
+                    </form>
+                }
+                <h1>@item.ActivityName</h1>
+                <h4>Activity Coordinator: @item.User.FirstName</h4>
+                <h4>Description</h4>
+                <p>@item.ActivityDescription</p>
+                <p>Participants</p>
+            }
+        }
+        @{
+            <h3>Participants</h3>
+            foreach(var item in @ViewBag.Individuals){
+                <p style="margin-left: 0.5em;">@item.User.FirstName</p>
+            }
+        }
+        
+    </div>
+</div>

@@ -1,0 +1,66 @@
+@{
+    ViewData["Title"] = "CarlBelt Exam Index Page";
+}
+<div id="master">
+    <div id="header">
+        <h1>Welcome to the Dojo Activity Center</h1>
+    </div>
+    <!--Main body containing forms of index page. Relates to SplashPage controller!-->
+    <div id="mainBody">
+        <fieldset>
+            <legend><h1>Register</h1></legend>
+                <form action="/register" method="post">
+                    <ul>
+                        <label>First Name:</label>
+                        <label>Last Name:</label>
+                        <label>Email:</label>
+                        <label>Password:</label>
+                        <label>ConfirmPassword:</label>
+                    </ul>
+                    <ul>
+                        <input type="text" name="FirstName" placeholder="ex: Jim">
+                        <input type="text" name="LastName" placeholder="ex: Halper">
+                        <input type="email" name="Email" placeholder="ex: jim@dunder.com">
+                        <input type="password" name="Password" placeholder="Secret">
+                        <input type="password" name="ConfirmPassword" placeholder="Secret">
+                    </ul>
+                    <button type="submit" name="RegisterButton">Register</button>
+                </form>
+        </fieldset>
+        <fieldset>
+            <legend><h1>Login</h1></legend>
+                <form action="/login" method="post">
+                    <ul>
+                        <label>Email:</label>
+                        <label>Password:</label>
+                    </ul>
+                    <ul>
+                        <input type="email" name="Email" placeholder="ex: jim@dunder.com">
+                        <input type="password" name="Password" placeholder="Secret">
+                    </ul>
+                    <button type="submit" name="LoginButton">Login</button> 
+                </form>
+        </fieldset>
+    </div>
+    <!--Footer contains minor logic for presenting errors from Databae and Form Validations.-->
+    <div id="footer">
+        @{
+            foreach(var error in @ViewBag.Errors){
+                if(@error.Errors.Count > 0){
+                    <p>@error.Errors[0].ErrorMessage</p>
+                }
+            }
+        }
+        @{
+            if(@ViewBag.SpecialError != null){
+                <p>@ViewBag.SpecialError</p>
+            }
+        }
+        @{
+            foreach(var error in @ViewBag.LoginErrors){
+                <p>@error</p>
+            }
+        }
+        
+    </div>
+</div>

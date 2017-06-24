@@ -1,0 +1,47 @@
+@{
+    ViewData["Title"] = "CarlBelt Activity Adder Page";
+}
+<div id="master">
+    <div id="header">
+        <h1>Dojo Activity Center</h1>
+        <h3><a href="/returnOurActivities">Home</a></h3>
+        <p><a href="/logoff">Log off</a></p>
+    </div>
+    <div id="mainBody">
+        <h2>Create an Activity!</h2>
+        <form action="/createActivity" method="post">
+            <ul>
+                <label>Title:</label>
+                <label>Time:</label>
+                <label>Date:</label>
+                <label>Duration:</label>
+            </ul>
+            <ul>
+                <input type="text" name="ActivityName" placeholder="Jog...">
+                <input type="time" name="Time">
+                <input type="date" name="ActivityDate">
+                <input type="number" name="ActivityDuration" placeholder="1...">
+                <select name="HDM">
+                    <option value="Minute">Minute</option>
+                    <option selected>Hour</option>
+                    <option value="Days">Days</option>
+                </select>
+            </ul>
+            <p>Description</p>
+            <textarea name="ActivityDescription" rows="5" cols="40"></textarea>
+            <button type="submit" name="CreateActivity">Create Activity</button>
+        </form>
+    </div>
+    <div id="footer">
+        @{
+            foreach(var error in @ViewBag.Errors){
+                if(@error.Errors.Count > 0){
+                    <p>@error.Errors[0].ErrorMessage</p>
+                }
+            }
+            if(@ViewBag.BadDate != null){
+                <p>@ViewBag.BadDate</p>
+            }
+        }
+    </div>
+</div>

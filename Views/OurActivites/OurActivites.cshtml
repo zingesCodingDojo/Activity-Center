@@ -1,0 +1,61 @@
+@{
+    ViewData["Title"] = "CarlBelt Exam Index Page";
+}
+<div id="master">
+    <div id="header">
+        <h1>Dojo Activity Center</h1>
+        @{
+            foreach(var thing in @ViewBag.CurrentUser){
+                <h3>Hello @thing.FirstName!</h3>
+            }
+        }
+        <p><a href="/logoff">Log off</a></p>
+    </div>
+    <div id="mainBody">
+        <table>
+            <thead>
+                <tr>
+                    <th>Activity</th>
+                    <th>Date and Time</th>
+                    <th>Duration</th>
+                    <th>Event Coordinator</th>
+                    <th>Number of Participants</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach(var item in @ViewBag.AllActivities){
+                        <tr>
+                            <td><a href="/singleActivity/@item.ActivityId">@item.ActivityName</a></td>
+                            <td>@item.ActivityDate.ToString("d") --- @item.Time</td>
+                            <td>@item.ActivityDuration @item.HDM</td>
+                            <td>@item.User.FirstName</td>
+                            <td>@item.FunMaker.Count</td>
+                            @if(@item.UserId == @ViewBag.MyID){
+                                <td><a href="/delete/@item.ActivityId">Delete</a></td>
+                            }
+                            else{
+                                <td>
+                                    <form action="/toggler/@item.ActivityId" method="post">
+                                    <select name="Join" onchange="this.form.submit()">
+                                        <option value="Join">Join</option>
+                                        <option selected>Pick! Double joins okay</option>
+                                        <option value="Leave">Leave</option>
+                                    </select>
+                                    </form>
+                                </td>
+                            }
+                        </tr>
+                            
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <div id="footer">
+        <form action="/goMakeActivity" method="get">
+            <button type="submit" name="AddActivity">Add New Activity!</button>
+        </form>
+    </div>
+</div>
